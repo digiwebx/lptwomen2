@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>أهلاً بكِ في عالم Kit & Kaboodle - دللي قطتكِ الآن!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Tajawal:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #fff4fc 0%, #fff6ee 64%, #f4e5ff 100%);
+      font-family: 'Tajawal', Arial, sans-serif;
+      color: #703b89;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .hero-card {
+      max-width: 1060px;
+      margin: 2.7rem auto 2rem auto;
+      display: flex;
+      align-items: flex-end;
+      gap: 2.5rem;
+      background: linear-gradient(120deg,#fbe7ff 65%,#f0eaff 100%);
+      box-shadow:0 10px 34px #efd3fb33;
+      border-radius:35px;
+      padding:2.8rem 1.9rem 2.1rem 1.9rem;
+      position:relative;
+    }
+    .hero-media {
+      flex:1;
+      text-align:center;
+      position:relative;
+      min-width:270px;
+    }
+    .hero-media img {
+      width:210px;
+      filter:drop-shadow(0 2px 25px #ea96e1);
+      border-radius:17px;
+      background:#fff8ee;
+      margin-bottom:.7rem;
+      border: 6px solid #fffefb;
+      transition:transform .35s;
+    }
+    .hero-media img:hover {
+      transform:scale(1.045) rotate(-2deg);
+    }
+    .media-caption {
+      color:#e77dac;
+      font-weight:700;
+      font-size:1.01rem;
+      margin-top:3px;
+    }
+    .hero-content {
+      flex:2;
+      text-align:right;
+    }
+    .hero-title {
+      font-size:2.65rem;font-weight:900;color:#9536ad;
+      letter-spacing:.6px;margin-bottom:.35rem;
+      text-shadow:0 1px 13px #feedf6;
+    }
+    .hero-desc {
+      background: linear-gradient(90deg,#ffbde6 28%,#ffd6e8 100%);
+      display:inline-block;font-size:1.18rem;padding:.62rem 2.1rem; border-radius:18px;
+      color:#7e3b95; margin-bottom:.55rem; box-shadow:0 0 13px #fbe7ff88;
+    }
+    .flavors-row {
+      display: flex; gap: .92rem; margin: 1.2rem 0;
+      justify-content: flex-end;
+    }
+    .flavor-icon {
+      background:#ffd6ec; border-radius:16px;
+      box-shadow:0 0 6px #f7caff11;
+      padding:.37rem .8rem;
+      text-align:center;
+    }
+    .flavor-icon img {width:28px;}
+    .flavor-label {color:#d55c93;font-size:1.01rem;}
+    .value-sticker {
+      background:linear-gradient(90deg,#ffe076 60%,#fd8fc3 100%);
+      color:#7e3b95;font-weight:900;font-size:1.02rem;
+      padding:.69rem 1.6rem;border-radius:18px;
+      letter-spacing:1.1px;position:absolute; top: -27px; right: 28px; box-shadow:0 2px 11px #ffe9a8;
+    }
+    .cta-btn-large {
+      background:linear-gradient(90deg,#fe88b7 15%,#ffe076 94%);
+      color:#fff; font-size:1.3rem; font-weight:900;
+      border:none; border-radius:24px; padding:1.01rem 2.7rem; 
+      cursor:pointer; box-shadow:0 2px 15px #f8c1ea;
+      margin:2.2rem 0 .8rem 0;
+      transition:background .23s;
+      letter-spacing:1.4px;
+    }
+    .cta-btn-large:hover {
+      background:linear-gradient(90deg,#ffe076 30%,#fe88b7 90%);
+      color:#ad3d86;
+    }
+    .cards-row {
+      margin:1.8rem auto .8rem auto; display:flex; flex-wrap:wrap; gap:1.35rem; justify-content:center;
+      max-width:1100px;
+    }
+    .info-card {
+      background:linear-gradient(90deg,#faf3ff 80%,#fff7fa 100%);
+      border-radius:18px; box-shadow:0 0 10px #fcbeee22;
+      padding:1.08rem 1.3rem; min-width:230px; max-width:355px;
+      font-size:1.13rem; position:relative; flex:1;
+    }
+    .info-card strong {color:#e569a1;}
+    .info-card .sec-title {border: none; font-size:1.14rem; color:#ae41ae; box-shadow:none; margin-bottom:.36rem; padding:0;}
+    .order-form-section {
+      max-width:600px; margin:2.5rem auto 0 auto;
+      background:linear-gradient(91deg,#fbe7ff 70%,#fcf4fe 100%);
+      border-radius:22px; box-shadow:0 2px 16px #fcbeee44;
+      padding:1.7rem 2vw 1.6rem 2vw;
+      position:relative;
+    }
+    .section-label {
+      font-size:1.22rem; color:#ae41ae; font-weight:900;background: #fbeffb;border-radius:8px;padding:.35rem .93rem;margin-bottom:.96rem;text-align:center;
+      box-shadow:0 1px 8px #ffe9ee; letter-spacing:.4px;
+    }
+    .order-form-box label, .order-form-box select, .order-form-box input {font-size:1.01rem;}
+    .order-form-box label {color:#ad4ab0; font-weight:700;}
+    .order-form-box input, .order-form-box select {
+      margin:.33rem 0 .73rem 0; padding:.51rem; border-radius:8px; border:1px solid #e8d4fa; width:100%; background:#fff8ee;
+      font-size:1rem; transition:border-color .2s;
+    }
+    .order-form-box input:focus, .order-form-box select:focus {border:1.5px solid #e36db5;}
+    .order-form-box .methods-row {margin:.52rem 0;}
+    .order-form-box button {width:100%;margin-top:.74rem;}
+    .pay-gateway {display:none;margin:1.07rem 0;}
+    .pay-gateway .cta-btn-large {background:linear-gradient(90deg,#4aa769,#efc104);}
+    .pay-gateway .cta-btn-large:hover {background:linear-gradient(90deg,#ffe076,#4aa769);}
+    .pay-gateway-desc {color:#6b466e;font-size:.98rem;margin-top:.47rem;}
+    .comments-section {
+      max-width:810px;
+      margin:2.7rem auto 0 auto;
+      background: linear-gradient(90deg,#fcf2fe 38%,#fff8ee 100%);
+      border-radius: 18px;
+      box-shadow:0 0 11px #f1cae9;
+      padding:1.4rem 2vw 1.3rem 2vw;
+    }
+    .comments-section .sec-title {margin-bottom:.48rem;}
+    .comment {background: linear-gradient(90deg,#f4e2fa 60%, #fff8ee 100%);
+      border-radius:9px; margin: .6rem 0; padding: 1rem;
+      border-right: 4px solid #b35a98; box-shadow: 0 2px 12px #f9a1bc22;font-size:1.09rem;}
+    .comment .name {font-weight:bold; color:#e569a1;}
+    .comment .time {font-size:.98em;color:#bbb;float:left;}
+    .faq, .contact {margin-top:1.7rem;}
+    .contact {
+      background: #fff4fa; border-radius:12px;
+      padding: 1.15rem; box-shadow:0 0 8px #fadbf3;
+      max-width:700px; margin:2rem auto 0 auto;
+      font-size:1.09rem;
+    }
+    .contact a {color:#e569a1;text-decoration:underline;}
+    @media(max-width:800px){
+      .hero-card{flex-direction:column; padding:1.2rem;}
+      .hero-media img{width:70vw;}
+      .main-slogan{font-size:1.36rem;}
+      .info-card{min-width:200px;}
+    }
+    @media(max-width:500px){
+      .hero-card{padding:1rem;}
+    }
+  </style>
+  <script>
+    function addComment() {
+      var name = document.getElementById('cname').value.trim();
+      var text = document.getElementById('ctext').value.trim();
+      if(name && text) {
+        var commentList = document.getElementById('liveComments');
+        var date = new Date();
+        var now = date.toLocaleDateString('ar-DZ') + " " + date.toLocaleTimeString('ar-DZ',{hour:'2-digit',minute:'2-digit'});
+        var comment = document.createElement('div');
+        comment.className = 'comment';
+        comment.innerHTML = '<span class="name">' + name + '</span>: ' + text + '<span class="time">' + now + '</span>';
+        commentList.prepend(comment);
+        document.getElementById('cname').value = '';
+        document.getElementById('ctext').value = '';
+      }
+    }
+    function togglePayment() {
+      var payAlgeria = document.getElementById('payAlgeria');
+      var cibRadio = document.getElementById('cib');
+      payAlgeria.style.display = cibRadio && cibRadio.checked ? 'block' : 'none';
+    }
+    window.onload = function() {
+      document.querySelectorAll('input[name="payment"]').forEach(function(el) {
+        el.addEventListener('change', togglePayment);
+      });
+      togglePayment();
+    }
+  </script>
+</head>
+<body>
+<div class="hero-card">
+  <div class="hero-media">
+    <img src="5803003646357212503.jpg" alt="عبوة Kit & Kaboodle">
+    <div class="media-caption">منتج أصلي، عبوة كبيرة تكفي مدة طويلة!</div>
+  </div>
+  <div class="hero-content">
+    <div class="value-sticker">A GREAT VALUE! | قيمة رائعة</div>
+    <div class="hero-title">دللي قطتكِ بطعام فاخر وصحي بنكهة لا تُقاوم</div>
+    <span class="hero-desc">غذي قطتكِ بـ Kit & Kaboodle - التغذية المثالية بدون عناء وبسعر لا يُقاوم، مع توصيل سريع وطرق دفع مبتكرة!</span>
+    <div class="flavors-row">
+      <div class="flavor-icon"><img src="https://img.icons8.com/color/96/chicken.png"/><div class="flavor-label">الدواجن</div></div>
+      <div class="flavor-icon"><img src="https://img.icons8.com/color/96/liver.png"/><div class="flavor-label">الكبد</div></div>
+      <div class="flavor-icon"><img src="https://img.icons8.com/color/96/fish.png"/><div class="flavor-label">سمك المحيط</div></div>
+    </div>
+    <button class="cta-btn-large" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'});">اطلبي الآن واستمتعي براحة البال!</button>
+  </div>
+</div>
+
+<div class="cards-row">
+  <div class="info-card">
+    <div class="sec-title">مزايا المنتج</div>
+    - دعم المناعة وصحة الشعر والهضم <br>
+    - نكهات مشهية ترضي القط السعيد <br>
+    - حبيبات مقرمشة – متعة في كل وجبة!
+  </div>
+  <div class="info-card">
+    <div class="sec-title">الراحة وسهولة الطلب</div>
+    - توصيل سريع لكل الولايات <br>
+    - دفع عند الاستلام أو الكترونياً <br>
+    - طلب بنقرة واحدة فقط
+  </div>
+  <div class="info-card">
+    <div class="sec-title">التوفيرات والتجربة</div>
+    - عبوة اقتصادية تدوم طويلاً <br>
+    - سعر مغري لن تجديه في أي مكان آخر <br>
+    - شهادات وآراء زبونات من الجزائر
+  </div>
+</div>
+
+<div class="order-form-section" id="orderForm">
+  <div class="section-label">اطلبي الآن | اختاري طريقة الدفع</div>
+  <div class="order-form-box">
+    <form>
+      <label>اسمكِ الكامل:</label>
+      <input type="text" placeholder="اكتبي اسمكِ" required>
+      <label>رقم الهاتف:</label>
+      <input type="tel" placeholder="رقم واتساب أو هاتف" required>
+      <label>الولاية / المدينة:</label>
+      <input type="text" placeholder="اكتبي ولايتكِ أو مدينتكِ" required>
+      <label>عدد العبوات:</label>
+      <select>
+        <option>1 عبوة</option>
+        <option>2 عبوتين</option>
+        <option>3 عبوات</option>
+        <option>4 عبوات أو أكثر</option>
+      </select>
+      <div class="methods-row">
+        <label>طريقة الدفع:</label>
+        <input type="radio" id="cod" name="payment" value="cod" checked>
+        <label for="cod">الدفع عند الاستلام</label>
+        <input type="radio" id="cib" name="payment" value="cib">
+        <label for="cib">الدفع إلكترونيًا (CIB | Edahabia)</label>
+      </div>
+      <div id="payAlgeria" class="pay-gateway">
+        <button class="cta-btn-large" type="button">
+          دفع الآن عبر CIB أو Edahabia
+          <img src="https://www.cibweb.dz/Content/images/cib.png" alt="CIB" style="width:36px;vertical-align:middle;">
+        </button>
+        <div class="pay-gateway-desc">يتم التوجيه لبوابة الدفع الجزائرية لإتمام العملية بأمان.</div>
+      </div>
+      <button class="cta-btn-large" type="submit">أكملي الطلب</button>
+    </form>
+    <div style="color:#ea69ad;margin-top:.6rem;font-size:1rem;">
+      📦 سنتواصل معكِ لتأكيد الطلب وخدمة التوصيل لأي ولاية!
+    </div>
+  </div>
+</div>
+
+<div class="comments-section">
+  <div class="sec-title">تعليقات الزبونات وتقييماتهن الحية 👩‍🦰🐾</div>
+  <div id="liveComments">
+    <div class="comment"><span class="name">فاطمة من العاصمة</span>: قطتي صارت ما ترفضش الأكل وفرحانة! <span class="time">11/11/2025 09:40</span></div>
+    <div class="comment"><span class="name">نوال من قسنطينة</span>: الأسعار ممتازة، والدفع عند الاستلام سهل وسريع 👌 <span class="time">11/11/2025 09:31</span></div>
+    <div class="comment"><span class="name">سهام من وهران</span>: العبوة كبيرة والشحن سريع! <span class="time">11/11/2025 09:20</span></div>
+  </div>
+  <div style="margin:1rem 0 .5rem 0; color:#b35a98;">اكتبي تعليقكِ أو رأيكِ بالتجربة:</div>
+  <input id="cname" type="text" placeholder="اسمكِ" style="width: 35%; padding:.6rem; border-radius:7px;border:1px solid #aaa;">
+  <input id="ctext" type="text" placeholder="تعليقكِ أو تجربتكِ" style="width: 60%; padding:.6rem; border-radius:7px;border:1px solid #aaa;">
+  <button onclick="addComment()" class="cta-btn-large" type="button" style="width:90%;margin-top:.5rem;">إرسال التعليق</button>
+</div>
+
+<div class="section faq">
+  <div class="sec-title">الأسئلة الشائعة</div>
+  <ul class="list">
+    <li><b>كمية التغذية اليومية؟</b> عادة بين 40 - 80 غرام يومياً للقط البالغ.</li>
+    <li><b>هل مناسب لكل الأعمار؟</b> نعم، للقطط البالغة في كافة الأعمار.</li>
+    <li><b>طرق الدفع؟</b> الدفع عند الاستلام أو إلكترونيًا عبر CIB و Edahabia.</li>
+  </ul>
+</div>
+
+<div class="contact">
+  <div class="sec-title">للتواصل السريع والطلب عبر الهاتف:</div>
+  <div>واتساب/هاتف: <a href="tel:06661337523">0666 133 7523</a></div>
+  <div>واتساب مباشر: <a href="https://wa.me/2136661337523">اضغطي هنا</a></div>
+</div>
+</body>
+</html>
